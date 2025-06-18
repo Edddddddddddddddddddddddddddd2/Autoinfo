@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <title>Autoinfo.am - Մուտք և Գրանցում</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="icon" href="images/1icon.png">
+    <style>
+        /* Մութ ֆոն մոդալի համար */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Մոդալ պատուհանի բովանդակություն */
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .form-toggle-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .form-toggle-buttons button {
+            margin: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .glxavor {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1><a href="index.html">Ավտոմեքենաներ</a></h1>
+</header>
+
+<nav>
+    <div class="dropdown">
+        <h3 id="maknishner">Մեքենաների մակնիշներ</h3>
+        <div class="dropdown-content" id="dropdowncontent">
+            <p><button onclick="location.href='mersedes.html'">Mersedes</button></p>
+            <p><button onclick="location.href='bmw.html'">BMW</button></p>
+            <p><button onclick="location.href='toyota.html'">Toyota</button></p>
+            <p><button onclick="location.href='nissan.html'">Nissan</button></p>
+            <p><button onclick="location.href='audi.html'">Audi</button></p>
+            <p><button onclick="location.href='ford.html'">Ford</button></p>
+            <p><button onclick="location.href='lamborghini.html'">Lamborghini</button></p>
+            <p><button onclick="location.href='ferrari.html'">Ferrari</button></p>
+        </div>
+    </div>
+</nav>
+
+<div class="form-toggle-buttons">
+    <button onclick="showForm('loginForm')">Մուտք գործել</button>
+    <button onclick="showForm('registerForm')">Գրանցվել</button>
+</div>
+
+<!-- Մուտք - մոդալ պատուհան -->
+<div id="loginForm" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeForms()">&times;</span>
+        <h2>Մուտք գործել</h2>
+        <form method="POST" action="login.php">
+            <input type="email" name="email" placeholder="Էլ․ հասցե" required>
+            <input type="password" name="password" placeholder="Գաղտնաբառ" required>
+            <button type="submit">Մուտք գործել</button>
+        </form>
+    </div>
+</div>
+
+<!-- Գրանցում - մոդալ պատուհան -->
+<div id="registerForm" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeForms()">&times;</span>
+        <h2>Գրանցվել</h2>
+        <form id="registrationForm" action="register.php" method="POST">
+            <input type="text" name="name" placeholder="Ձեր անունը" required>
+            <input type="email" name="email" placeholder="Էլ․ հասցե" required>
+            <input type="password" name="password" placeholder="Գաղտնաբառ" required>
+            <button type="submit">Գրանցվել</button>
+        </form>
+        <div id="registrationMessage"></div>
+    </div>
+</div>
+
+<section>
+    <div class="glxavor">
+        <h2>Հայկական շուկա</h2>
+        <img src="images/hay.jpg" width="300">
+        <p><a href="https://auto.am/" target="_blank">Auto.am - Մեքենաների վաճառք Հայաստանում</a></p>
+        <p><a href="https://www.list.am/ru/category/16" target="_blank">List.am - Մասեր, աքսեսուարներ և այլն</a></p>
+    </div>
+
+    <div class="glxavor">
+        <h2>Ռուսական շուկա</h2>
+        <img src="images/rus.jpg" width="300">
+        <p><a href="https://www.drom.ru/" target="_blank">Drom.ru - Վաճառք Ռուսաստանում</a></p>
+        <p><a href="https://www.avito.ru/all/avtomobili" target="_blank">Avito.ru - Մասեր, աքսեսուարներ և այլն</a> </p>
+    </div>
+
+    <div class="glxavor">
+        <h2>Վրացական շուկա</h2>
+        <img src="images/vra.jpg" width="300">
+        <p><a href="https://autopapa.ge/m/ru/" target="_blank">Autopapa.ge - Վաճառք Վրաստանում</a> </p>
+        <p><a href="https://myparts.ge/ka/" target="_blank">Myparts.ge - Մասեր, աքսեսուարներ և այլն</a></p>
+    </div>
+</section>
+
+<footer>
+    այստեղ կարող է լինել ձեր գովազդը<br>
+    Հեռ․—<a href="tel:095591950">095591950</a><br>
+    Մեիլ—<a href="mailto:ohanyaned46@gmail.com">ohanyaned46@gmail.com</a>
+</footer>
+
+<!-- JavaScript -->
+<script>
+function showForm(formId) {
+    closeForms();
+    document.getElementById(formId).style.display = "block";
+}
+
+function closeForms() {
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("registerForm").style.display = "none";
+}
+
+// Փակել մոդալ պատուհանները, երբ սեղմվում է դուրսը
+window.onclick = function(event) {
+    if (event.target.id === "loginForm") closeForms();
+    if (event.target.id === "registerForm") closeForms();
+}
+
+// AJAX գրանցում
+const regForm = document.getElementById("registrationForm");
+if (regForm) {
+    regForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        const formData = new FormData(regForm);
+        fetch("register.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("registrationMessage").textContent = data;
+            regForm.reset();
+        })
+        .catch(error => {
+            const msg = document.getElementById("registrationMessage");
+            msg.textContent = "Տեղի ունեցավ սխալ։ Խնդրում ենք փորձել կրկին։";
+            msg.style.color = "red";
+        });
+    });
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+body{
+	margin: 0 auto;
+	padding: 0;
+	font-family: segoe-ui_normal,Segoe UI,Segoe,Segoe WP,Helvetica Neue,Helvetica,sans-serif;
+	background-image: url(../images/bodybackground.jpg);
+	background-size: cover;
+}
+ .registration-container {
+            display: none;
+            margin: 20px auto;
+            padding: 20px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+        .form-toggle-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .form-toggle-buttons button {
+            margin: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+.wrapper{
+	width:90%;
+	margin: 0 auto;
+	display: grid;
+	grid-template-areas: 
+    "header header"
+    "nav section"
+    "footer footer";
+	grid-template-rows: 100px 1fr 100px;
+	grid-template-columns: 20% 1fr;
+	grid-gap: 5px;
+  	height: 100vh;
+}
+header {
+	background: #707070;
+	grid-area: header;
+	border-radius: 10px;
+}
+header h1{
+	text-align: center;
+}
+header h1 a {
+	text-decoration: none;
+	color: #ffffff;
+}
+nav h3 a{
+	text-decoration: none;
+	color: #AE081C;
+}
+nav {
+	background: #C9BFBF;
+	grid-area: nav; 
+	border-radius: 10px;
+}
+
+section {
+	background: #ABABAB;
+	grid-area: section;
+	border-radius: 10px;
+	background-image: url(../images/sectionbackground2.jpg);
+	background-size: cover;
+	height: 600px;
+	overflow: auto;
+
+}
+
+
+
+footer {
+	background: #707070;
+	grid-area: footer;
+	border-radius: 10px;
+}
+
+header, nav, section, footer {
+	padding: 5px;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+#maknishner{
+	color: #555555;
+	padding: 30px 0 0 30%;
+}
+#dropdowncontent{
+	margin: 0 0 0 10%;
+}
+#dropdowncontent p a{
+	color: #555555;
+	text-decoration: none;
+}
+.glxavor p, .glxavor h2{
+	color: #ffffff;
+}
+.glxavor img{
+	float: left;
+	padding: 5px 10px;
+}
+.glxavor h2{
+	text-align: center;
+}
+.glxavor:hover{
+	background-color: #626C6C;
+}
+.glxavor {
+	padding-bottom: 90px;
+}
+.glxavor a{
+	color: #FDF5E6;
+	text-decoration: none;
+}
+.glxavor p{
+	font-size: 25px;
+}
+
+.mersedes p, .mersedes h2{
+	color: #ffffff;
+}
+.mersedes img{
+	float: left;
+	padding: 5px 10px;
+}
+.mersedes h2{
+	text-align: center;
+}
+.clear{
+	clear: both;
+}
+.bmw p, .bmw h2{
+	color: #ffffff;
+}
+.bmw img{
+	float: left;
+	padding: 5px 10px;
+}
+.bmw h2{
+	text-align: center;
+}
+.toyota p, .toyota h2{
+	color: #ffffff;
+}
+.toyota img{
+	float: left;
+	padding: 5px 10px;
+}
+.toyota h2{
+	text-align: center;
+}
+.nissan p, .nissan h2{
+	color: #ffffff;
+}
+.nissan img{
+	float: left;
+	padding: 5px 10px;
+}
+.nissan h2{
+	text-align: center;
+}
+.clear{
+	clear: both;
+}
+.audi p, .audi h2{
+	color: #ffffff;
+}
+.audi img{
+	float: left;
+	padding: 5px 10px;
+}
+.audi h2{
+	text-align: center;
+}
+.clear{
+	clear: both;
+}
+.ford p, .ford h2{
+	color: #ffffff;
+}
+.ford img{
+	float: left;
+	padding: 5px 10px;
+}
+.ford h2{
+	text-align: center;
+}
+.lamborghini p, .lamborghini h2{
+	color: #ffffff;
+}
+.lamborghini img{
+	float: left;
+	padding: 5px 10px;
+}
+.lamborghini h2{
+	text-align: center;
+}
+.ferrari p, .ferrari h2{
+	color: #ffffff;
+}
+.ferrari img{
+	float: left;
+	padding: 5px 10px;
+}
+.ferrari h2{
+	text-align: center;
+}
+.mersedes, .bmw, .toyota, .nissan, .audi, .ford, .lamborghini, .ferrari{
+	background-color: rgb(201,191,191,0.5);
+}
+.mersedes:hover, .bmw:hover, .toyota:hover, .nissan:hover, .audi:hover, .ford:hover, .lamborghini:hover, .ferrari:hover{
+	background-color: rgb(112,112,112,0.5);
+}
+.dropdown-content button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    margin: 5px 0;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.dropdown-content button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,40 @@
+<?php
+// Սահմանում ենք UTF-8 գլխամաս
+header("Content-Type: text/plain; charset=utf-8");
+
+// Ստուգում ենք՝ POST եղանակով է եկել
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Սanitize՝ մաքրում ենք տվյալները
+    $name = isset($_POST["name"]) ? trim(htmlspecialchars($_POST["name"])) : '';
+    $email = isset($_POST["email"]) ? trim(htmlspecialchars($_POST["email"])) : '';
+    $password = isset($_POST["password"]) ? $_POST["password"] : '';
+
+    // Ստուգում՝ դատարկ չեն
+    if ($name === '' || $email === '' || $password === '') {
+        echo "Խնդրում ենք լրացնել բոլոր դաշտերը։";
+        exit;
+    }
+
+    // Ստուգում՝ էլ. հասցեն վավեր է
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Խնդրում ենք մուտքագրել վավեր էլ. հասցե։";
+        exit;
+    }
+
+    // Հեշավորում ենք գաղտնաբառը
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    // Պատրաստում ենք գրառումը
+    $entry = "Անուն: $name | Էլ․հասցե: $email | Գաղտնաբառ (hash): $hashedPassword\n";
+
+    // Պահպանում ենք տվյալը .txt ֆայլում
+    $file = 'users.txt';
+    if (file_put_contents($file, $entry, FILE_APPEND | LOCK_EX)) {
+        echo "Գրանցումն հաջողությամբ ավարտվեց։";
+    } else {
+        echo "Սխալ տեղի ունեցավ։ Փորձեք կրկին։";
+    }
+} else {
+    echo "Տվյալները չեն ուղարկվել։";
+}
+?>
